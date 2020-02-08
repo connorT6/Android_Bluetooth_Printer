@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv;
     private TextView tv2;
     private BluetoothAdapter bluetoothAdapter;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         bt1 = findViewById(R.id.button);
         tv = findViewById(R.id.tv);
         tv2 = findViewById(R.id.tv2);
+        editText = findViewById(R.id.editText);
     }
 
     public void btClick(View view) {
@@ -89,9 +92,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
-            for (int i = 0; i < 10; i++) {
-                outputStream.write(new byte[]{10});
-            }
+            BitmapByte.setOutputStream(outputStream);
+            BitmapByte.createImageFromString(editText.getText().toString());
+            outputStream.write(new byte[]{10});
+
         } catch (IOException e) {
             e.printStackTrace();
         }

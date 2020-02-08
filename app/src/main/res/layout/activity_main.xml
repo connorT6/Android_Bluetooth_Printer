@@ -22,9 +22,20 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/tv2"
+        android:layout_below="@id/editText"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:onClick="btClick"
-        android:text="Button" />
+        android:text="Connect And Print" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv2"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="Enter any single line or Multiline Text"
+        android:inputType="textMultiLine" />
+
 </RelativeLayout>
